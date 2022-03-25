@@ -1,0 +1,138 @@
+.main-grid-container{
+    display:grid;
+    height:100vh;  
+      background-color: 	#8d8c8c;
+    grid-template-columns: 50px 3fr 2fr;
+     grid-template-rows: 64px 1fr 64px;
+    grid-template-areas:"header header header"
+                        " chessboard chessboard chessMenu"
+                        "footer footer footer"
+    
+        ;
+}
+
+.header{
+    background-color: #8d8c8c;
+    grid-area: header;
+    display: flex;
+    justify-content: space-evenly;
+    overflow-y: hidden;
+    align-items: center;
+    font-size:200%;
+
+}
+
+.main-chessboard-container{
+    background-color: 	#9f9e9e;
+    grid-area:chessboard;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-menu{
+    display: grid;
+  margin-right:10px;
+    grid-template-rows:  1fr 1fr ;
+    grid-template-columns: 1fr  ;
+    grid-template-areas:
+                        "  topMenu  "
+                        " bottomMenu "
+                        
+                      
+    
+        ;
+    background-color:	#605f5f ;
+
+    
+    grid-area:chessMenu;
+    overflow-y: hidden;
+    border-radius: 8px;
+   
+}
+.footer{
+    background-color: #8d8c8c;
+    display: flex;
+    grid-area: footer;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.header::after{
+    height:100%;
+    width:5px;
+    background-color: #fff;
+}
+.divider {
+    border-left: 2px solid whitesmoke;
+    height: 500%;
+    opacity: .5;
+}
+.top-menu{
+background-color: white;
+grid-area:topMenu;
+
+}
+
+.bottom-menu{
+background-color: #625F5F;
+grid-area:bottomMenu;
+max-height:1fr;
+ overflow-y: scroll;
+ color:white;
+
+}
+.hint:hover{
+    cursor:pointer;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+
+    .opening-list-item{
+        font-size: 16px;
+        
+    }
+    .top-menu{
+        background-color: white;
+        grid-area:topMenu;
+        width:80%
+        }
+    .bottom-menu{
+        font-size: 12px;
+        background-color: #625F5F;
+        grid-area:bottomMenu;
+     
+        width:100%;
+         overflow-y: scroll;
+         color:white;
+        
+        }
+        .main-menu{
+       display: flex;
+     
+       grid-area:chessMenu;
+        overflow-y: hidden;
+        border-radius: 8px;
+       
+    }
+
+    .main-grid-container{
+        display:grid;
+        grid-row-gap: 20px;
+        height:100vh;  
+          background-color: 	#8d8c8c;
+        grid-template-columns: 1fr 2fr 2fr 1fr;
+         grid-template-rows:   64px 3fr 3fr 64px;
+        grid-template-areas:"header header header header"
+                            " .  chessboard chessboard ."
+                            "chessMenu chessMenu chessMenu chessMenu"
+                            "chessMenu chessMenu chessMenu chessMenu"
+                            "footer footer footer footer"
+        
+            ;
+    }
+  }
